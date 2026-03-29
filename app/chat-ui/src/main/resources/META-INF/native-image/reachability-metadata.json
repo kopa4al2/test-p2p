@@ -93,6 +93,18 @@
       ]
     },
     {
+      "type": "com.sun.prism.shader.DrawRoundRect_Color_Loader",
+      "methods": [
+        {
+          "name": "loadShader",
+          "parameterTypes": [
+            "com.sun.prism.ps.ShaderFactory",
+            "java.io.InputStream"
+          ]
+        }
+      ]
+    },
+    {
       "type": "com.sun.prism.shader.FillCircle_Color_Loader",
       "methods": [
         {
@@ -118,6 +130,30 @@
     },
     {
       "type": "com.sun.prism.shader.FillPgram_LinearGradient_PAD_Loader",
+      "methods": [
+        {
+          "name": "loadShader",
+          "parameterTypes": [
+            "com.sun.prism.ps.ShaderFactory",
+            "java.io.InputStream"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.sun.prism.shader.FillRoundRect_Color_Loader",
+      "methods": [
+        {
+          "name": "loadShader",
+          "parameterTypes": [
+            "com.sun.prism.ps.ShaderFactory",
+            "java.io.InputStream"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "com.sun.prism.shader.FillRoundRect_LinearGradient_PAD_Loader",
       "methods": [
         {
           "name": "loadShader",
@@ -200,6 +236,19 @@
       ]
     },
     {
+      "type": "com.sun.scenario.effect.impl.prism.ps.PPSLinearConvolveShadowPeer",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "com.sun.scenario.effect.FilterContext",
+            "com.sun.scenario.effect.impl.Renderer",
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
       "type": "com.sun.scenario.effect.impl.prism.ps.PPSRenderer",
       "methods": [
         {
@@ -249,6 +298,14 @@
         {
           "name": "nativeOrder",
           "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "java.sql.SQLException",
+      "fields": [
+        {
+          "name": "next"
         }
       ]
     },
@@ -364,6 +421,43 @@
       "type": "javafx.stage.Window"
     },
     {
+      "type": "kotlin.Metadata",
+      "methods": [
+        {
+          "name": "bv",
+          "parameterTypes": []
+        },
+        {
+          "name": "d1",
+          "parameterTypes": []
+        },
+        {
+          "name": "d2",
+          "parameterTypes": []
+        },
+        {
+          "name": "k",
+          "parameterTypes": []
+        },
+        {
+          "name": "mv",
+          "parameterTypes": []
+        },
+        {
+          "name": "pn",
+          "parameterTypes": []
+        },
+        {
+          "name": "xi",
+          "parameterTypes": []
+        },
+        {
+          "name": "xs",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
       "type": "kotlin.SafePublicationLazyImpl",
       "fields": [
         {
@@ -372,7 +466,25 @@
       ]
     },
     {
-      "type": "kotlin.reflect.jvm.internal.ReflectionFactoryImpl"
+      "type": "kotlin.jvm.internal.DefaultConstructorMarker"
+    },
+    {
+      "type": "kotlin.reflect.jvm.internal.ReflectionFactoryImpl",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "kotlin.reflect.jvm.internal.impl.load.java.ErasedOverridabilityCondition"
+    },
+    {
+      "type": "kotlin.reflect.jvm.internal.impl.load.java.FieldOverridabilityCondition"
+    },
+    {
+      "type": "kotlin.reflect.jvm.internal.impl.load.java.JavaIncompatibilityRulesOverridabilityCondition"
     },
     {
       "type": "kotlinx.coroutines.CancellableContinuationImpl",
@@ -401,6 +513,14 @@
       "fields": [
         {
           "name": "_handled$volatile"
+        }
+      ]
+    },
+    {
+      "type": "kotlinx.coroutines.DispatchedCoroutine",
+      "fields": [
+        {
+          "name": "_decision$volatile"
         }
       ]
     },
@@ -557,6 +677,36 @@
       ]
     },
     {
+      "type": "org.h2.Driver"
+    },
+    {
+      "type": "org.jetbrains.exposed.dao.EntityLifecycleInterceptor"
+    },
+    {
+      "type": "org.jetbrains.exposed.jdbc.ExposedConnectionImpl"
+    },
+    {
+      "type": "org.kordamp.ikonli.IkonliIkonResolver"
+    },
+    {
+      "type": "org.kordamp.ikonli.materialdesign.MaterialDesignIkonHandler"
+    },
+    {
+      "type": "org.osgi.framework.BundleContext"
+    },
+    {
+      "type": "org.slf4j.Logger"
+    },
+    {
+      "type": "org.sqlite.JDBC",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
       "type": "sun.misc.Unsafe",
       "fields": [
         {
@@ -605,10 +755,25 @@
   ],
   "resources": [
     {
+      "glob": "META-INF/fonts.mf"
+    },
+    {
+      "glob": "META-INF/maven/org.xerial/sqlite-jdbc/pom.properties"
+    },
+    {
+      "glob": "META-INF/resources/ikonli/0.0.0/fonts/ikonli.ttf"
+    },
+    {
+      "glob": "META-INF/resources/materialdesign/1.7.22/fonts/MaterialDesignIcons.ttf"
+    },
+    {
       "glob": "META-INF/services/java.lang.System$LoggerFinder"
     },
     {
       "glob": "META-INF/services/java.net.spi.InetAddressResolverProvider"
+    },
+    {
+      "glob": "META-INF/services/java.sql.Driver"
     },
     {
       "glob": "META-INF/services/java.time.zone.ZoneRulesProvider"
@@ -617,7 +782,25 @@
       "glob": "META-INF/services/java.util.spi.ResourceBundleControlProvider"
     },
     {
+      "glob": "META-INF/services/kotlin.reflect.jvm.internal.impl.resolve.ExternalOverridabilityCondition"
+    },
+    {
+      "glob": "META-INF/services/kotlin.reflect.jvm.internal.impl.util.ModuleVisibilityHelper"
+    },
+    {
       "glob": "META-INF/services/kotlinx.coroutines.internal.MainDispatcherFactory"
+    },
+    {
+      "glob": "META-INF/services/org.jetbrains.exposed.sql.DatabaseConnectionAutoRegistration"
+    },
+    {
+      "glob": "META-INF/services/org.jetbrains.exposed.sql.statements.GlobalStatementInterceptor"
+    },
+    {
+      "glob": "META-INF/services/org.kordamp.ikonli.IkonHandler"
+    },
+    {
+      "glob": "META-INF/services/org.slf4j.spi.SLF4JServiceProvider"
     },
     {
       "glob": "api-ms-win-core-console-l1-1-0.dll"
@@ -4874,6 +5057,9 @@
       "glob": "com/sun/javafx/tk/quantum/QuantumMessagesBundle_en_US.properties"
     },
     {
+      "glob": "com/sun/prism/d3d/hlsl/DrawRoundRect_Color.obj"
+    },
+    {
       "glob": "com/sun/prism/d3d/hlsl/FillCircle_Color.obj"
     },
     {
@@ -4881,6 +5067,12 @@
     },
     {
       "glob": "com/sun/prism/d3d/hlsl/FillPgram_LinearGradient_PAD.obj"
+    },
+    {
+      "glob": "com/sun/prism/d3d/hlsl/FillRoundRect_Color.obj"
+    },
+    {
+      "glob": "com/sun/prism/d3d/hlsl/FillRoundRect_LinearGradient_PAD.obj"
     },
     {
       "glob": "com/sun/prism/d3d/hlsl/Solid_TextureFirstPassLCD.obj"
@@ -4898,6 +5090,18 @@
       "glob": "com/sun/prism/d3d/hlsl/Texture_LinearGradient_PAD.obj"
     },
     {
+      "glob": "com/sun/scenario/effect/impl/hw/d3d/hlsl/LinearConvolveShadow_8.obj"
+    },
+    {
+      "glob": "controlsfx.properties"
+    },
+    {
+      "glob": "controlsfx_en.properties"
+    },
+    {
+      "glob": "controlsfx_en_US.properties"
+    },
+    {
       "glob": "glass.dll"
     },
     {
@@ -4913,7 +5117,19 @@
       "glob": "msvcp140_2.dll"
     },
     {
+      "glob": "org/controlsfx/control/statusbar.css"
+    },
+    {
+      "glob": "org/slf4j/impl/StaticLoggerBinder.class"
+    },
+    {
+      "glob": "org/sqlite/native/Windows/x86_64/sqlitejdbc.dll"
+    },
+    {
       "glob": "prism_d3d.dll"
+    },
+    {
+      "glob": "sqlite-jdbc.properties"
     },
     {
       "glob": "ucrtbase.dll"
@@ -6083,11 +6299,23 @@
       "locales": [
         "en-US"
       ]
+    },
+    {
+      "name": "controlsfx",
+      "locales": [
+        "en-US"
+      ]
     }
   ],
   "jni": [
     {
       "type": "[Lcom.sun.glass.ui.Screen;"
+    },
+    {
+      "type": "[Z"
+    },
+    {
+      "type": "com.sun.glass.ui.Application"
     },
     {
       "type": "com.sun.glass.ui.Cursor",
@@ -6141,6 +6369,121 @@
             "int",
             "int"
           ]
+        }
+      ]
+    },
+    {
+      "type": "com.sun.javafx.font.directwrite.D2D1_COLOR_F",
+      "fields": [
+        {
+          "name": "a"
+        },
+        {
+          "name": "b"
+        },
+        {
+          "name": "g"
+        },
+        {
+          "name": "r"
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.sun.javafx.font.directwrite.D2D1_MATRIX_3X2_F",
+      "fields": [
+        {
+          "name": "_11"
+        },
+        {
+          "name": "_12"
+        },
+        {
+          "name": "_21"
+        },
+        {
+          "name": "_22"
+        },
+        {
+          "name": "_31"
+        },
+        {
+          "name": "_32"
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.sun.javafx.font.directwrite.D2D1_PIXEL_FORMAT",
+      "fields": [
+        {
+          "name": "alphaMode"
+        },
+        {
+          "name": "format"
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.sun.javafx.font.directwrite.D2D1_POINT_2F",
+      "fields": [
+        {
+          "name": "x"
+        },
+        {
+          "name": "y"
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "com.sun.javafx.font.directwrite.D2D1_RENDER_TARGET_PROPERTIES",
+      "fields": [
+        {
+          "name": "dpiX"
+        },
+        {
+          "name": "dpiY"
+        },
+        {
+          "name": "minLevel"
+        },
+        {
+          "name": "pixelFormat"
+        },
+        {
+          "name": "type"
+        },
+        {
+          "name": "usage"
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
         }
       ]
     },
@@ -6330,6 +6673,43 @@
       ]
     },
     {
+      "type": "java.lang.String",
+      "methods": [
+        {
+          "name": "toLowerCase",
+          "parameterTypes": [
+            "java.util.Locale"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "java.lang.Throwable",
+      "methods": [
+        {
+          "name": "toString",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "java.util.ArrayList",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "int"
+          ]
+        },
+        {
+          "name": "add",
+          "parameterTypes": [
+            "java.lang.Object"
+          ]
+        }
+      ]
+    },
+    {
       "type": "java.util.Collections",
       "methods": [
         {
@@ -6346,6 +6726,19 @@
         {
           "name": "<init>",
           "parameterTypes": []
+        },
+        {
+          "name": "containsKey",
+          "parameterTypes": [
+            "java.lang.Object"
+          ]
+        },
+        {
+          "name": "put",
+          "parameterTypes": [
+            "java.lang.Object",
+            "java.lang.Object"
+          ]
         }
       ]
     },
@@ -6371,6 +6764,164 @@
             "int",
             "int",
             "double"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.sqlite.BusyHandler",
+      "methods": [
+        {
+          "name": "callback",
+          "parameterTypes": [
+            "int"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.sqlite.Collation",
+      "methods": [
+        {
+          "name": "xCompare",
+          "parameterTypes": [
+            "java.lang.String",
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.sqlite.Function",
+      "fields": [
+        {
+          "name": "args"
+        },
+        {
+          "name": "context"
+        },
+        {
+          "name": "value"
+        }
+      ],
+      "methods": [
+        {
+          "name": "xFunc",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.sqlite.Function$Aggregate",
+      "methods": [
+        {
+          "name": "clone",
+          "parameterTypes": []
+        },
+        {
+          "name": "xFinal",
+          "parameterTypes": []
+        },
+        {
+          "name": "xStep",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.sqlite.Function$Window",
+      "methods": [
+        {
+          "name": "xInverse",
+          "parameterTypes": []
+        },
+        {
+          "name": "xValue",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.sqlite.ProgressHandler",
+      "methods": [
+        {
+          "name": "progress",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.sqlite.core.DB",
+      "methods": [
+        {
+          "name": "onCommit",
+          "parameterTypes": [
+            "boolean"
+          ]
+        },
+        {
+          "name": "onUpdate",
+          "parameterTypes": [
+            "int",
+            "java.lang.String",
+            "java.lang.String",
+            "long"
+          ]
+        },
+        {
+          "name": "throwex",
+          "parameterTypes": []
+        },
+        {
+          "name": "throwex",
+          "parameterTypes": [
+            "int"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.sqlite.core.DB$ProgressObserver",
+      "methods": [
+        {
+          "name": "progress",
+          "parameterTypes": [
+            "int",
+            "int"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "org.sqlite.core.NativeDB",
+      "fields": [
+        {
+          "name": "busyHandler"
+        },
+        {
+          "name": "commitListener"
+        },
+        {
+          "name": "pointer"
+        },
+        {
+          "name": "progressHandler"
+        },
+        {
+          "name": "updateListener"
+        }
+      ],
+      "methods": [
+        {
+          "name": "stringToUtf8ByteArray",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        },
+        {
+          "name": "throwex",
+          "parameterTypes": [
+            "java.lang.String"
           ]
         }
       ]

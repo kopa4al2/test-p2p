@@ -9,8 +9,10 @@ import kotlinx.coroutines.withContext
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import com.app.common.ChatMessage
+import org.slf4j.LoggerFactory
 
 class ChatPeer {
+    private val logger = LoggerFactory.getLogger(ChatPeer::class.java)
     val tcpPort = CompletableDeferred<Int>()
 
     suspend fun sendMessage(targetIp: String, targetPort: Int, message: ChatMessage): Boolean =
@@ -27,7 +29,7 @@ class ChatPeer {
                 }
                 true
             } catch (e: Exception) {
-                println("Send message error: ${e.message}")
+                logger.error("Send message error to {}:{}: {}", targetIp, targetPort, e.message)
                 false
             }
         }
@@ -41,9 +43,9 @@ class ChatPeer {
             while (isActive) {
                 server.accept().use { client ->
                     val json = client.getInputStream().bufferedReader().readLine()
-                    println("Received raw: $json")
+                    logger.debug("Received raw: {}", json)
                     val msg = Json.decodeFromString<ChatMessage>(json)
-                    println("Received message: $msg")
+                    logger.info("Received message from: {}", msg.sender)
                     onReceived(msg)
                 }
             }

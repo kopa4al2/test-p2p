@@ -18,7 +18,8 @@ dependencies {
     api(libs.exposed.dao)
     api(libs.exposed.datetime)
     api(libs.sqlite.jdbc)
-    api(libs.h2)
+    api("org.slf4j:slf4j-api:2.0.16")
+//    api(libs.h2)
     testImplementation(kotlin("test"))
 }
 

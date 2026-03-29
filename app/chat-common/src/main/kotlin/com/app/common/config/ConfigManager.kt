@@ -1,9 +1,11 @@
 package com.app.common.config
 
+import org.slf4j.LoggerFactory
 import java.io.File
 import java.util.*
 
 object ConfigManager {
+    private val logger = LoggerFactory.getLogger(ConfigManager::class.java)
     private const val APP_PATH = "src/main/resources"
     private const val FILE_NAME = "config.properties"
     lateinit var current: AppConfig
@@ -17,12 +19,16 @@ object ConfigManager {
     )
 
     fun load() {
+        val logsDir = File(resourcesFolder(), "logs")
+        if (!logsDir.exists()) logsDir.mkdirs()
+        System.setProperty("log.dir", logsDir.absolutePath)
+
         val props = Properties()
-        val file = File("$APP_PATH/$FILE_NAME")
+        val file = File(resourcesFolder(), FILE_NAME)
 
         if (!file.exists()) {
             file.parentFile.mkdirs()
-            println("File ${file.absolutePath} not found, creating default config file...")
+            logger.info("File {} not found, creating default config file...", file.absolutePath)
             
             val defaults = Properties()
             defaultProperties.forEach { (key, provider) ->
@@ -34,7 +40,7 @@ object ConfigManager {
             }
         }
 
-        println("Loading config from ${file.absolutePath}...")
+        logger.info("Loading config from {}...", file.absolutePath)
         file.inputStream().use { props.load(it) }
 
         current = AppConfig(
@@ -43,6 +49,21 @@ object ConfigManager {
             stunAddress = getProperty("stun.address", props),
             stunPort = getProperty("stun.port", props).toInt()
         )
+    }
+
+    fun resourcesFolder() : String {
+        val userHome = System.getProperty("user.home")
+        val os = System.getProperty("os.name").lowercase()
+
+        val dbDir = when {
+            os.contains("win") -> File(System.getenv("APPDATA"), "chat-p2p")
+            os.contains("mac") -> File(userHome, "Library/Application Support/chat-p2p")
+            else -> File(userHome, ".chat-p2p") // Linux / Android
+        }
+
+        if (!dbDir.exists()) dbDir.mkdirs()
+
+        return dbDir.absolutePath
     }
 
     private fun getProperty(key: String, props: Properties): String {

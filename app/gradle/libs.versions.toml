@@ -7,11 +7,14 @@ kotlin = "2.1.0"
 kotlinx-datetime = "0.6.1"
 kotlinx-serialization-json = "1.7.2"
 kotlinx-coroutines = "1.8.1"
-javafx = "23"
+javafx = "22"
 javafx-plugin = "0.0.14"
 gluonfx-plugin = "1.0.28"
+proguard = "7.1.0"
 controlsfx = "11.1.2"
 ikonli = "12.4.0"
+slf4j = "2.0.16"
+logback = "1.5.16"
 
 [libraries]
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
@@ -27,7 +30,10 @@ exposed-core = { module = "org.jetbrains.exposed:exposed-core", version.ref = "e
 exposed-jdbc = { module = "org.jetbrains.exposed:exposed-jdbc", version.ref = "exposed" }
 exposed-dao = { module = "org.jetbrains.exposed:exposed-dao", version.ref = "exposed" }
 exposed-datetime = { module = "org.jetbrains.exposed:exposed-java-time", version.ref = "exposed" }
-h2 = { module = "com.h2database:h2", version.ref = "h2" }
+#h2 = { module = "com.h2database:h2", version.ref = "h2" }
+proguard-gradle = { group = "com.guardsquare", name = "proguard-gradle", version.ref = "proguard" }
+slf4j_api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+logback_classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
 
 # Libraries can be bundled together for easier import
 [bundles]
@@ -38,3 +44,4 @@ ikonli = ["ikonli-materialdesign", "ikonli-javafx"]
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 javafx-gradle = { id = "org.openjfx.javafxplugin", version.ref = "javafx-plugin" }
 gluonfx-gradle = { id = "com.gluonhq.gluonfx-gradle-plugin", version.ref = "gluonfx-plugin" }
+proguard-gradle = { id = "com.guardsquare.proguard", version.ref = "proguard" }

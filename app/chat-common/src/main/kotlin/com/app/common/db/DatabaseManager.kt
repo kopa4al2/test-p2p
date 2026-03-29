@@ -1,20 +1,22 @@
 package com.app.common.db
 
 import com.app.common.ChatHistoryMessage
+import com.app.common.config.ConfigManager
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.transactions.transaction
+import org.slf4j.LoggerFactory
 import java.io.File
 
 object DatabaseManager {
+    private val logger = LoggerFactory.getLogger(DatabaseManager::class.java)
+
     fun init(userId: String = "default") {
         val dbFileName = "p2p_$userId.db"
-        val dbFile = File(dbFileName)
-        println("Initializing database at: ${dbFile.absolutePath}")
+        val dbFile = File(ConfigManager.resourcesFolder(),dbFileName)
+        logger.info("Initializing database at: {}", dbFile.absolutePath)
         Database.connect("jdbc:sqlite:${dbFile.absolutePath}", "org.sqlite.JDBC")
 
         transaction {
-//            exec("PRAGMA journal_mode=WAL;")
-//            exec("PRAGMA synchronous=NORMAL;")
             SchemaUtils.create(Messages)
             SchemaUtils.create(Peers)
         }
@@ -98,6 +100,7 @@ object DatabaseManager {
     fun getPendingMessages(): List<Pair<String, ChatHistoryMessage>> {
         return transaction {
             Messages.selectAll().where { Messages.isPending eq true }
+                .orderBy(Messages.timestamp to SortOrder.ASC)
                 .map {
                     val peerId = it[Messages.peerId]
                     val msg = ChatHistoryMessage(

@@ -8,5 +8,6 @@ data class PeerInfo(
     var address: InetAddress,
     var tcpPort: Int,
     var lastSeen: Long = System.currentTimeMillis(),
-    var isOnline: Boolean = true
+    var isOnline: Boolean = true,
+    var hasUnread: Boolean = false
 )

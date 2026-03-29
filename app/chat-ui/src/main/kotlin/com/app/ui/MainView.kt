@@ -4,24 +4,31 @@ import com.app.ui.components.ChatAreaView
 import com.app.ui.components.PeerListView
 import javafx.application.Platform
 import javafx.scene.layout.BorderPane
+import org.controlsfx.control.StatusBar
 
 class MainView(private val controller: MainController) : BorderPane() {
     private val peerListComp = PeerListView(controller.peers)
     private val chatAreaComp = ChatAreaView { text -> controller.sendMessage(text) }
+    private val statusBar = StatusBar().apply {
+        text = "Ready"
+        style = "-fx-background-color: #EEEEEE;"
+    }
 
     init {
         left = peerListComp
         center = chatAreaComp
+        bottom = statusBar
 
         peerListComp.onPeerSelected { peer ->
             controller.selectPeer(peer)
+            statusBar.text = if (peer != null) "Chatting with ${peer.name}" else "Ready"
         }
 
         chatAreaComp.bindDisableState(peerListComp.selectedPeerProperty.isNull)
 
-        controller.onMessageReceived = { sender, text ->
+        controller.onMessageReceived = { msg ->
             Platform.runLater {
-                chatAreaComp.appendMessage("$sender: $text")
+                chatAreaComp.appendMessage(msg)
             }
         }
 

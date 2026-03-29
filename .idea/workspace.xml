@@ -4,22 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57c73681-887f-41fe-b29e-c887443e5ab3" name="Changes" comment="5">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/chat-common/src/main/kotlin/com/app/common/db/PeerSchema.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Start_Martin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.run/Start_Martin.run.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Start_Stefan.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.run/Start_Stefan.run.xml" afterDir="false" />
+    <list default="true" id="57c73681-887f-41fe-b29e-c887443e5ab3" name="Changes" comment="6">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/buildSrc/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/buildSrc/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/chat-common/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-common/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/chat-common/src/main/kotlin/com/app/common/ChatHistoryMessage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-common/src/main/kotlin/com/app/common/ChatHistoryMessage.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/chat-common/src/main/kotlin/com/app/common/PeerInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-common/src/main/kotlin/com/app/common/PeerInfo.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/chat-common/src/main/kotlin/com/app/common/config/ConfigManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-common/src/main/kotlin/com/app/common/config/ConfigManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/chat-network/src/main/kotlin/com/app/network/peer/LocalPeerDiscoveryStrategy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-network/src/main/kotlin/com/app/network/peer/LocalPeerDiscoveryStrategy.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/chat-common/src/main/kotlin/com/app/common/db/DatabaseManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-common/src/main/kotlin/com/app/common/db/DatabaseManager.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/chat-network/src/main/kotlin/org/stefan/chat/ChatPeer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-network/src/main/kotlin/org/stefan/chat/ChatPeer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/chat-ui/src/main/kotlin/com/app/ui/MainChatWindow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-ui/src/main/kotlin/com/app/ui/MainChatWindow.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/chat-ui/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-ui/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/chat-ui/src/main/kotlin/com/app/ui/MainController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-ui/src/main/kotlin/com/app/ui/MainController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/chat-ui/src/main/kotlin/com/app/ui/MainView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-ui/src/main/kotlin/com/app/ui/MainView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/chat-ui/src/main/kotlin/com/app/ui/components/ChatAreaView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-ui/src/main/kotlin/com/app/ui/components/ChatAreaView.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/chat-ui/src/main/kotlin/com/app/ui/components/PeerListView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-ui/src/main/kotlin/com/app/ui/components/PeerListView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/chat-ui/src/main/resources/META-INF/native-image/reachability-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-ui/src/main/resources/META-INF/native-image/reachability-metadata.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/app/gradle/libs.versions.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +27,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="228" />
+    <option name="cachedIndexableFilesCount" value="202" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="ExternalProjectsData">
@@ -64,37 +63,20 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="app" type="f1a62948:ProjectNode" />
+                <item name="chat-ui" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="app" type="f1a62948:ProjectNode" />
+                <item name="chat-ui" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="app" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="application" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="app" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="app" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build setup" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="app" type="f1a62948:ProjectNode" />
+                <item name="chat-ui" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="gluonfx" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="app" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="other" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -360,7 +342,7 @@
       <workItem from="1774769545756" duration="965000" />
       <workItem from="1774770520699" duration="3399000" />
       <workItem from="1774774021806" duration="3375000" />
-      <workItem from="1774778144506" duration="16145000" />
+      <workItem from="1774778144506" duration="26260000" />
     </task>
     <task id="LOCAL-00001" summary="3">
       <option name="closed" value="true" />
@@ -386,7 +368,23 @@
       <option name="project" value="LOCAL" />
       <updated>1774783400071</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="6">
+      <option name="closed" value="true" />
+      <created>1774799338103</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1774799338103</updated>
+    </task>
+    <task id="LOCAL-00005" summary="6">
+      <option name="closed" value="true" />
+      <created>1774799368988</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1774799368988</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -396,7 +394,8 @@
     <MESSAGE value="3" />
     <MESSAGE value="4" />
     <MESSAGE value="5" />
-    <option name="LAST_COMMIT_MESSAGE" value="5" />
+    <MESSAGE value="6" />
+    <option name="LAST_COMMIT_MESSAGE" value="6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

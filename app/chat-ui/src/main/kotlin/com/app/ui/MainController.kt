@@ -10,6 +10,7 @@ import javafx.application.Platform
 import javafx.collections.FXCollections
 import javafx.collections.ObservableList
 import kotlinx.coroutines.*
+import org.slf4j.LoggerFactory
 import org.stefan.chat.ChatPeer
 import java.net.InetAddress
 import java.util.*
@@ -19,12 +20,13 @@ class MainController(
     private val chatPeer: ChatPeer,
     private val discovery: PeerDiscoveryStrategy
 ) {
+    private val logger = LoggerFactory.getLogger(MainController::class.java)
     val peers: ObservableList<PeerInfo> = FXCollections.observableArrayList()
     private val scope = CoroutineScope(Dispatchers.Main + SupervisorJob())
     private val dispatcherIO = Dispatchers.IO
 
-    var onMessageReceived: ((String, String) -> Unit)? = null
-    var onHistoryUpdated: ((String) -> Unit)? = null
+    var onMessageReceived: ((ChatHistoryMessage) -> Unit)? = null
+    var onHistoryUpdated: ((List<ChatHistoryMessage>) -> Unit)? = null
     var onPeerListRefresh: (() -> Unit)? = null
     var selectedPeer: PeerInfo? = null
 
@@ -39,7 +41,7 @@ class MainController(
             }
 
             val port = chatPeer.tcpPort.await()
-            println("Server started on port: $port")
+            logger.info("Server started on port: {}", port)
             discovery.startAdvertising(ConfigManager.current.userName, port)
 
             discovery.startScanning { peer ->
@@ -74,23 +76,34 @@ class MainController(
     fun selectPeer(peer: PeerInfo?) {
         selectedPeer = peer
         if (peer != null) {
+            peer.hasUnread = false
+            onPeerListRefresh?.invoke()
             scope.launch {
                 val history = withContext(dispatcherIO) {
                     DatabaseManager.getHistory(peer.id)
                 }
-                onHistoryUpdated?.invoke(formatHistory(history))
+                onHistoryUpdated?.invoke(history)
             }
         } else {
-            onHistoryUpdated?.invoke("")
+            onHistoryUpdated?.invoke(emptyList())
         }
     }
 
     fun sendMessage(text: String) {
         val peer = selectedPeer ?: return
         if (!peer.isOnline) {
-            onMessageReceived?.invoke("System", "Peer is currently offline. Message will be sent when they come online.")
+            onMessageReceived?.invoke(
+                ChatHistoryMessage(
+                    messageId = UUID.randomUUID().toString(),
+                    senderId = "system",
+                    senderName = "System",
+                    content = "Peer is currently offline. Message will be sent when they come online.",
+                    timeSend = System.currentTimeMillis()
+                )
+            )
         }
         val myId = discovery.instanceId
+        val myName = ConfigManager.current.userName
         val messageId = UUID.randomUUID().toString()
         val timestamp = System.currentTimeMillis()
 
@@ -99,7 +112,7 @@ class MainController(
                 DatabaseManager.saveMessage(
                     peerId = peer.id,
                     senderId = myId,
-                    senderName = "Me",
+                    senderName = myName,
                     content = text,
                     timestamp = timestamp,
                     messageId = messageId,
@@ -114,7 +127,7 @@ class MainController(
                     ChatMessage(
                         messageId,
                         myId,
-                        ConfigManager.current.userName,
+                        myName,
                         text
                     )
                 )
@@ -126,7 +139,15 @@ class MainController(
             }
         }
 
-        onMessageReceived?.invoke("Me", text)
+        onMessageReceived?.invoke(
+            ChatHistoryMessage(
+                messageId = messageId,
+                senderId = myId,
+                senderName = "Me",
+                content = text,
+                timeSend = timestamp
+            )
+        )
     }
 
     private fun resendPendingMessages(peer: PeerInfo) {
@@ -134,8 +155,8 @@ class MainController(
         scope.launch(dispatcherIO) {
             val pending = DatabaseManager.getPendingMessages().filter { it.first == peer.id }
             if (pending.isEmpty()) return@launch
-
-            println("Resending ${pending.size} pending messages to ${peer.name}")
+            
+            logger.info("Resending {} pending messages to {}", pending.size, peer.name)
             for ((_, msg) in pending) {
                 val success = chatPeer.sendMessage(
                     peer.address.hostAddress,
@@ -158,20 +179,34 @@ class MainController(
     }
 
     private fun handleIncomingMessage(incomingMsg: ChatMessage) {
+        val timestamp = System.currentTimeMillis()
         scope.launch(dispatcherIO) {
             DatabaseManager.saveMessage(
                 peerId = incomingMsg.senderId,
                 senderId = incomingMsg.senderId,
                 senderName = incomingMsg.sender,
                 content = incomingMsg.content,
-                timestamp = System.currentTimeMillis(),
+                timestamp = timestamp,
                 messageId = incomingMsg.id,
                 isPending = false
             )
         }
 
+        val msg = ChatHistoryMessage(
+            messageId = incomingMsg.id,
+            senderId = incomingMsg.senderId,
+            senderName = incomingMsg.sender,
+            content = incomingMsg.content,
+            timeSend = timestamp
+        )
+
         if (incomingMsg.senderId == selectedPeer?.id) {
-            onMessageReceived?.invoke(incomingMsg.sender, incomingMsg.content)
+            onMessageReceived?.invoke(msg)
+        } else {
+            peers.find { it.id == incomingMsg.senderId }?.let { peer ->
+                peer.hasUnread = true
+                onPeerListRefresh?.invoke()
+            }
         }
     }
 
@@ -179,7 +214,7 @@ class MainController(
         Platform.runLater {
             val existing = peers.find { it.id == peer.id }
             if (existing == null) {
-                println("Discovered new peer: ${peer.id}, ${peer.name}, ${peer.address}:${peer.tcpPort}")
+                logger.info("Discovered new peer: {}, {}, {}:{}", peer.id, peer.name, peer.address, peer.tcpPort)
                 peers.add(peer)
                 scope.launch(dispatcherIO) {
                     DatabaseManager.savePeer(peer.id, peer.name, peer.lastSeen)

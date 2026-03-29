@@ -9,6 +9,8 @@ import javafx.scene.control.ListView
 import javafx.scene.layout.HBox
 import javafx.scene.layout.Priority
 import javafx.scene.layout.VBox
+import org.kordamp.ikonli.javafx.FontIcon
+import org.kordamp.ikonli.materialdesign.MaterialDesign
 
 class PeerListView(peers: ObservableList<PeerInfo>) : VBox() {
     private val listView = ListView(peers)
@@ -19,7 +21,13 @@ class PeerListView(peers: ObservableList<PeerInfo>) : VBox() {
         get() = listView.selectionModel.selectedItemProperty()
 
     init {
-        children.addAll(Label("Online Peers"), listView)
+        val header = Label("Peers", FontIcon.of(MaterialDesign.MDI_ACCOUNT_MULTIPLE, 18)).apply {
+            style = "-fx-font-size: 1.1em; -fx-font-weight: bold; -fx-padding: 10;"
+        }
+        style = "-fx-background-color: #F5F5F5; -fx-border-color: #E0E0E0; -fx-border-width: 0 1 0 0;"
+        prefWidth = 250.0
+
+        children.addAll(header, listView)
         VBox.setVgrow(listView, Priority.ALWAYS)
         setupCellFactory()
     }
@@ -37,6 +45,7 @@ class PeerListView(peers: ObservableList<PeerInfo>) : VBox() {
                     super.updateItem(peer, empty)
                     if (empty || peer == null) {
                         graphic = null
+                        style = ""
                     } else {
                         val label = content.children[1] as Label
                         val addressText = if (peer.address.hostAddress == "0.0.0.0") "offline" else peer.address.hostAddress
@@ -44,11 +53,28 @@ class PeerListView(peers: ObservableList<PeerInfo>) : VBox() {
 
                         // Сменяме цвета според статуса
                         statusDot.fill = if (peer.isOnline)
-                            javafx.scene.paint.Color.GREEN
+                            javafx.scene.paint.Color.web("#4CAF50")
                         else
-                            javafx.scene.paint.Color.GRAY
+                            javafx.scene.paint.Color.web("#9E9E9E")
+
+                        if (peer.hasUnread) {
+                            label.style = "-fx-font-weight: bold; -fx-text-fill: #1976D2;"
+                            content.style = "-fx-background-color: #DDDDDD; -fx-background-radius: 5; -fx-padding: 5;"
+                        } else {
+                            label.style = "-fx-text-fill: #333333;"
+                            content.style = "-fx-padding: 5;"
+                        }
 
                         graphic = content
+                        
+                        // Style the cell itself when selected
+                        selectedProperty().addListener { _, _, isSelected ->
+                            if (isSelected) {
+                                style = "-fx-background-color: #E0E0E0;"
+                            } else {
+                                style = ""
+                            }
+                        }
                     }
                 }
             }

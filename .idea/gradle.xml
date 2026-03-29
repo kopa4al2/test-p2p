@@ -7,23 +7,23 @@
         <compositeConfiguration>
           <compositeBuild compositeDefinitionSource="SCRIPT">
             <builds>
-              <build path="$PROJECT_DIR$/buildSrc" name="buildSrc">
+              <build path="$PROJECT_DIR$/app/buildSrc" name="buildSrc">
                 <projects>
-                  <project path="$PROJECT_DIR$/buildSrc" />
+                  <project path="$PROJECT_DIR$/app/buildSrc" />
                 </projects>
               </build>
             </builds>
           </compositeBuild>
         </compositeConfiguration>
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/buildSrc" />
-            <option value="$PROJECT_DIR$/chat-common" />
-            <option value="$PROJECT_DIR$/chat-network" />
-            <option value="$PROJECT_DIR$/chat-ui" />
-            <option value="$PROJECT_DIR$/utils" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/app/buildSrc" />
+            <option value="$PROJECT_DIR$/app/chat-common" />
+            <option value="$PROJECT_DIR$/app/chat-network" />
+            <option value="$PROJECT_DIR$/app/chat-ui" />
+            <option value="$PROJECT_DIR$/app/utils" />
           </set>
         </option>
       </GradleProjectSettings>

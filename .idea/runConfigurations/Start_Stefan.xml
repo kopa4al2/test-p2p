@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Start_Stefan" type="JetRunConfigurationType" singleton="false">
+    <envs>
+      <env name="user.name" value="stefan" />
+    </envs>
+    <option name="MAIN_CLASS_NAME" value="com.app.ui.MainChatWindowKt" />
+    <module name="app.chat-ui.main" />
+    <shortenClasspath name="NONE" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

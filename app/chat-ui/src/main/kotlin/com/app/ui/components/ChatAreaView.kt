@@ -28,7 +28,7 @@ class ChatAreaView(val onSend: (String) -> Unit) : VBox() {
     }
 
     fun updateHistory(text: String) {
-        history.text = text
+        history.text = text + "\n"
         history.scrollTop = Double.MAX_VALUE
     }
     

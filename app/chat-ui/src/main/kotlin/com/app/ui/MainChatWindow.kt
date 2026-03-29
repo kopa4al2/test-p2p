@@ -1,47 +1,28 @@
 package com.app.ui
 
-import com.app.common.config.ConfigLoader
 import com.app.common.config.ConfigManager
 import com.app.network.peer.LocalPeerDiscoveryStrategy
+import com.app.network.peer.PeerDiscoveryStrategy
 import javafx.application.Application
-import javafx.application.Platform
 import javafx.scene.Scene
 import javafx.stage.Stage
-import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.cancel
-import kotlinx.coroutines.launch
 import org.stefan.chat.ChatPeer
-import org.stefan.chat.PeerDiscovery
 import kotlin.system.exitProcess
 
 class MainChatWindow : Application() {
 
     private val chatPeer = ChatPeer()
-    private val discovery = PeerDiscovery()
-    private val discoveryStrategy = LocalPeerDiscoveryStrategy()
+    private val discoveryStrategy: PeerDiscoveryStrategy = LocalPeerDiscoveryStrategy()
+    private lateinit var controller: MainController
 
     override fun start(primaryStage: Stage) {
         ConfigManager.load()
         println(ConfigManager.current)
-        val mainView = MainView(chatPeer, discovery)
-        MainScope().launch {
-            chatPeer.startServer { incomingMsg ->
-                Platform.runLater {
-                    mainView.handleIncomingMessage(incomingMsg)
-                }
-            }
 
-            val port = chatPeer.tcpPort.await()
+        controller = MainController(chatPeer, discoveryStrategy)
+        val mainView = MainView(controller)
 
-            discovery.startBroadcasting("Stefan", port)
-
-            println("Server started on port: $port")
-
-            discovery.startListening { peerId, peerName, peerAddress, peerTcpPort ->
-                mainView.handleDiscoveredPeer(peerId, peerName, peerAddress, peerTcpPort)
-            }
-        }
-
+        controller.start()
 
         primaryStage.scene = Scene(mainView, 800.0, 600.0)
         primaryStage.title = "Kotlin P2P Chat"
@@ -49,10 +30,13 @@ class MainChatWindow : Application() {
     }
 
     override fun stop() {
-        MainScope().cancel()
-
+        controller.stop()
+        discoveryStrategy.close()
         super.stop()
         exitProcess(0)
     }
+}
 
+fun main(args: Array<String>) {
+    Application.launch(MainChatWindow::class.java, *args)
 }

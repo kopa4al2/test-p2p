@@ -6,7 +6,7 @@ plugins {
 }
 
 application {
-    mainClass.set("com.app.ui.MainChatWindow")
+    mainClass.set("com.app.ui.MainChatWindowKt")
 }
 
 javafx {
@@ -15,7 +15,11 @@ javafx {
 }
 
 gluonfx {
-    graalvmHome = System.getenv("GRAALVM_HOME")
+    graalvmHome = "C:\\Users\\Stefan\\.jdks\\graalvm-ce-23.0.2"
+    target = project.findProperty("gluonfx.target")?.toString() ?: "host"
+}
+
+tasks.withType<JavaExec> {
 }
 
 dependencies {

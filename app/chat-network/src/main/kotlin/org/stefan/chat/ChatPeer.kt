@@ -37,6 +37,7 @@ class ChatPeer {
             while (isActive) {
                 server.accept().use { client ->
                     val json = client.getInputStream().bufferedReader().readLine()
+                    println("Received raw: $json")
                     val msg = Json.decodeFromString<ChatMessage>(json)
                     println("Received message: $msg")
                     onReceived(msg)

@@ -4,30 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57c73681-887f-41fe-b29e-c887443e5ab3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/p2p.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+    <list default="true" id="57c73681-887f-41fe-b29e-c887443e5ab3" name="Changes" comment="3">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/buildSrc/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/buildSrc/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/buildSrc/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/buildSrc/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/buildSrc/src/main/kotlin/kotlin-jvm.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/buildSrc/src/main/kotlin/kotlin-jvm.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/chat-common/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-common/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/chat-network/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-network/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/chat-network/src/main/kotlin/org/stefan/chat/PeerDiscovery.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-network/src/main/kotlin/org/stefan/chat/PeerDiscovery.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/chat-common/src/main/kotlin/com/app/common/config/ConfigLoader.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/chat-common/src/main/kotlin/com/app/common/config/ConfigManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-common/src/main/kotlin/com/app/common/config/ConfigManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/chat-network/src/main/kotlin/com/app/network/peer/LocalPeerDiscoveryStrategy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-network/src/main/kotlin/com/app/network/peer/LocalPeerDiscoveryStrategy.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/chat-network/src/main/kotlin/com/app/network/peer/PeerDiscoverStrategy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-network/src/main/kotlin/com/app/network/peer/PeerDiscoverStrategy.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/chat-network/src/main/kotlin/org/stefan/chat/ChatPeer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-network/src/main/kotlin/org/stefan/chat/ChatPeer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/chat-network/src/main/kotlin/org/stefan/chat/PeerDiscovery.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/chat-ui/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-ui/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/chat-ui/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-ui/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/chat-ui/src/main/kotlin/com/app/ui/MainChatWindow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-ui/src/main/kotlin/com/app/ui/MainChatWindow.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/chat-ui/src/main/kotlin/com/app/ui/MainView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-ui/src/main/kotlin/com/app/ui/MainView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/chat-ui/src/main/kotlin/com/app/ui/components/ChatAreaView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-ui/src/main/kotlin/com/app/ui/components/ChatAreaView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/gradle.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/app/gradle/libs.versions.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/settings.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/utils/build.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/utils/src/main/kotlin/Utilities.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/utils/src/test/kotlin/UtilitiesTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/app/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/app/gradlew.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +40,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="861" />
+    <option name="cachedIndexableFilesCount" value="228" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="ExternalProjectsData">
@@ -71,20 +76,31 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="app" type="f1a62948:ProjectNode" />
-                <item name="chat-ui" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="app" type="f1a62948:ProjectNode" />
-                <item name="chat-ui" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="app" type="f1a62948:ProjectNode" />
-                <item name="chat-ui" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="app" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="app" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build setup" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="app" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -120,8 +136,17 @@
   "keyToString": {
     "Gradle.Build app.executor": "Run",
     "Gradle.Build p2p.executor": "Run",
+    "Gradle.Upgrade Gradle wrapper.executor": "Run",
+    "Gradle.app [:chat-ui:com.app.ui.MainChatWindowKt.main()].executor": "Run",
+    "Gradle.app [:chat-ui:nativeBuild].executor": "Run",
+    "Gradle.app [:chat-ui:nativeCompile].executor": "Run",
+    "Gradle.app [:chat-ui:nativeRunAgent].executor": "Run",
     "Gradle.app [:chat-ui:run].executor": "Run",
+    "Gradle.app [build].executor": "Run",
+    "Gradle.app [nativeBuildAndroid].executor": "Run",
+    "Gradle.app [nativeBuildWindows].executor": "Run",
     "Gradle.app [run].executor": "Run",
+    "Gradle.app [start].executor": "Debug",
     "Gradle.app:chat-ui [run].executor": "Run",
     "Gradle.p2p [run].executor": "Run",
     "Gradle.p2p:chat-ui [clean].executor": "Run",
@@ -133,6 +158,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "first",
@@ -145,10 +171,10 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/Stefan/IdeaProjects/p2p/chat-common/src/main/kotlin/Main.kt",
-    "project.structure.last.edited": "SDKs",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "preferences.sourceCode.kotlin",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -161,7 +187,7 @@
       <recent name="C:\Users\Stefan\IdeaProjects\p2p\chat-ui\src\main\kotlin\org\stefan\chatui" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.app [:chat-ui:run]">
+  <component name="RunManager" selected="Kotlin.Start_Martin">
     <configuration name="app [:chat-ui:run]" type="GradleRunConfiguration" factoryName="Gradle" singleton="false" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -187,7 +213,7 @@
       <GradleCoverageDisabled>false</GradleCoverageDisabled>
       <method v="2" />
     </configuration>
-    <configuration name="app [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="app [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
@@ -198,7 +224,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="run" />
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -212,10 +238,15 @@
       <GradleCoverageDisabled>false</GradleCoverageDisabled>
       <method v="2" />
     </configuration>
-    <configuration name="app:chat-ui [run]" type="GradleRunConfiguration" factoryName="Gradle" singleton="false" temporary="true">
+    <configuration name="app [run]" type="GradleRunConfiguration" factoryName="Gradle" singleton="false" temporary="true">
       <ExternalSystemSettings>
+        <option name="env">
+          <map>
+            <entry key="user.name" value="Pesho" />
+          </map>
+        </option>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/app/chat-ui" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
@@ -237,10 +268,10 @@
       <GradleCoverageDisabled>false</GradleCoverageDisabled>
       <method v="2" />
     </configuration>
-    <configuration name="p2p [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="app [start]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -248,7 +279,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="run" />
+            <option value="start" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -262,30 +293,21 @@
       <GradleCoverageDisabled>false</GradleCoverageDisabled>
       <method v="2" />
     </configuration>
-    <configuration name="Whole project" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
+      <item itemvalue="Gradle.app [start]" />
+      <item itemvalue="Gradle.app [build]" />
       <item itemvalue="Gradle.app [:chat-ui:run]" />
       <item itemvalue="Gradle.app [run]" />
-      <item itemvalue="Gradle.app:chat-ui [run]" />
-      <item itemvalue="Gradle.p2p [run]" />
-      <item itemvalue="JUnit.Whole project" />
+      <item itemvalue="Kotlin.Start_Stefan" />
+      <item itemvalue="Kotlin.Start_Martin" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.app [:chat-ui:run]" />
-        <item itemvalue="JUnit.Whole project" />
+        <item itemvalue="Kotlin.Start_Stefan" />
+        <item itemvalue="Gradle.app [start]" />
         <item itemvalue="Gradle.app [run]" />
-        <item itemvalue="Gradle.app:chat-ui [run]" />
-        <item itemvalue="Gradle.p2p [run]" />
+        <item itemvalue="Gradle.app [build]" />
+        <item itemvalue="Gradle.app [:chat-ui:run]" />
       </list>
     </recent_temporary>
   </component>
@@ -315,12 +337,27 @@
       <workItem from="1774769020823" duration="3000" />
       <workItem from="1774769310255" duration="4000" />
       <workItem from="1774769545756" duration="965000" />
-      <workItem from="1774770520699" duration="1863000" />
+      <workItem from="1774770520699" duration="3399000" />
+      <workItem from="1774774021806" duration="3375000" />
+      <workItem from="1774778144506" duration="5001000" />
     </task>
+    <task id="LOCAL-00001" summary="3">
+      <option name="closed" value="true" />
+      <created>1774772397437</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1774772397437</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="3" />
+    <option name="LAST_COMMIT_MESSAGE" value="3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -334,6 +371,21 @@
           <url>file://$PROJECT_DIR$/chat-common/src/main/kotlin/ChatMessage.kt</url>
           <line>13</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/chat-common/src/main/kotlin/com/app/common/config/ConfigManager.kt</url>
+          <line>12</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/chat-ui/src/main/kotlin/com/app/ui/MainChatWindow.kt</url>
+          <line>18</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/chat-common/src/main/kotlin/com/app/common/config/ConfigManager.kt</url>
+          <line>16</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

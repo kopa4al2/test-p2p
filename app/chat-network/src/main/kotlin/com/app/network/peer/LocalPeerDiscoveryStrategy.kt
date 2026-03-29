@@ -12,15 +12,16 @@ import java.net.DatagramPacket
 import java.net.DatagramSocket
 import java.net.InetAddress
 import java.net.InetSocketAddress
+import java.net.Inet4Address
+import java.net.NetworkInterface
 import java.util.*
 import kotlin.time.Duration.Companion.milliseconds
 
 class LocalPeerDiscoveryStrategy(
-    private val port: Int = 8889,
-    private val broadcastAddress: InetAddress = InetAddress.getByName("255.255.255.255")
+    override val instanceId: String = UUID.randomUUID().toString(),
+    port: Int = 8889
 ) : PeerDiscoveryStrategy {
 
-    override val instanceId = UUID.randomUUID().toString()
     private val broadcastDelayMillis = 1000L
     private val scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
     private var broadcastSocket: DatagramSocket? = null
@@ -29,6 +30,8 @@ class LocalPeerDiscoveryStrategy(
     private var userName: String? = null
     private var tcpServerPort: Int? = null
     private val safePort: Int = port.takeIf { it in 1..65535 } ?: 8889
+
+    private val broadcastAddressOverride = InetAddress.getByName("255.255.255.255")
 
     init {
         if (port !in 1..65535) {
@@ -59,16 +62,43 @@ class LocalPeerDiscoveryStrategy(
 
         try {
             while (isActive) {
-                val packet = DatagramPacket(
-                    message, message.size,
-                    broadcastAddress, port
-                )
-                socket.send(packet)
+                val broadcastAddresses = getBroadcastAddresses()
+                if (broadcastAddresses.isEmpty()) {
+                    // Fallback to global broadcast
+                    val packet = DatagramPacket(message, message.size, broadcastAddressOverride, safePort)
+                    socket.send(packet)
+                } else {
+                    for (address in broadcastAddresses) {
+                        val packet = DatagramPacket(message, message.size, address, safePort)
+                        socket.send(packet)
+                    }
+                }
                 delay(broadcastDelayMillis.milliseconds)
             }
         } finally {
             socket.close()
         }
+    }
+
+    private fun getBroadcastAddresses(): List<InetAddress> {
+        val broadcastAddresses = mutableListOf<InetAddress>()
+        try {
+            val interfaces = NetworkInterface.getNetworkInterfaces()
+            while (interfaces.hasMoreElements()) {
+                val networkInterface = interfaces.nextElement()
+                if (networkInterface.isLoopback || !networkInterface.isUp) continue
+
+                for (interfaceAddress in networkInterface.interfaceAddresses) {
+                    val broadcast = interfaceAddress.broadcast
+                    if (broadcast != null && broadcast is Inet4Address) {
+                        broadcastAddresses.add(broadcast)
+                    }
+                }
+            }
+        } catch (e: Exception) {
+            println("Error while getting broadcast addresses: ${e.message}")
+        }
+        return broadcastAddresses
     }
 
     private fun startListening(onPeerFound: (id: String, username: String, address: InetAddress, peerPort: Int) -> Unit) =
@@ -80,7 +110,7 @@ class LocalPeerDiscoveryStrategy(
             listenSocket = socket
 
             val buffer = ByteArray(1024)
-            println("Listen for peers on port: $port...")
+            println("Listen for peers on port: $safePort...")
 
             try {
                 while (isActive) {
@@ -100,7 +130,7 @@ class LocalPeerDiscoveryStrategy(
                     }
                 }
             } catch (e: Exception) {
-                if (isActive) println("Error receiving message: ${e.message}")
+                if (isActive) println("Error receiving message on port $safePort: ${e.message}")
             } finally {
                 socket.close()
             }

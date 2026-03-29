@@ -39,7 +39,8 @@ class PeerListView(peers: ObservableList<PeerInfo>) : VBox() {
                         graphic = null
                     } else {
                         val label = content.children[1] as Label
-                        label.text = "${peer.name} (${peer.address.hostAddress})"
+                        val addressText = if (peer.address.hostAddress == "0.0.0.0") "offline" else peer.address.hostAddress
+                        label.text = "${peer.name} ($addressText)"
 
                         // Сменяме цвета според статуса
                         statusDot.fill = if (peer.isOnline)

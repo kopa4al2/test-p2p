@@ -12,26 +12,33 @@ import kotlin.system.exitProcess
 class MainChatWindow : Application() {
 
     private val chatPeer = ChatPeer()
-    private val discoveryStrategy: PeerDiscoveryStrategy = LocalPeerDiscoveryStrategy()
     private lateinit var controller: MainController
+    private var discoveryStrategy: PeerDiscoveryStrategy? = null
 
     override fun start(primaryStage: Stage) {
         ConfigManager.load()
         println(ConfigManager.current)
 
-        controller = MainController(chatPeer, discoveryStrategy)
+        val strategy = LocalPeerDiscoveryStrategy(
+            instanceId = ConfigManager.current.userId
+        )
+        this.discoveryStrategy = strategy
+
+        controller = MainController(chatPeer, strategy)
         val mainView = MainView(controller)
 
         controller.start()
 
         primaryStage.scene = Scene(mainView, 800.0, 600.0)
-        primaryStage.title = "Kotlin P2P Chat"
+        primaryStage.title = "Kotlin P2P Chat - ${ConfigManager.current.userName}"
         primaryStage.show()
     }
 
     override fun stop() {
-        controller.stop()
-        discoveryStrategy.close()
+        if (::controller.isInitialized) {
+            controller.stop()
+        }
+        discoveryStrategy?.close()
         super.stop()
         exitProcess(0)
     }

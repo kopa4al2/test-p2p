@@ -5,6 +5,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import com.app.common.ChatMessage
@@ -12,10 +13,11 @@ import com.app.common.ChatMessage
 class ChatPeer {
     val tcpPort = CompletableDeferred<Int>()
 
-    fun sendMessage(targetIp: String, targetPort: Int, message: ChatMessage) =
-        CoroutineScope(Dispatchers.IO).launch {
+    suspend fun sendMessage(targetIp: String, targetPort: Int, message: ChatMessage): Boolean =
+        withContext(Dispatchers.IO) {
             try {
-                java.net.Socket(targetIp, targetPort).use { socket ->
+                java.net.Socket().use { socket ->
+                    socket.connect(java.net.InetSocketAddress(targetIp, targetPort), 2000)
                     val json = Json.encodeToString(message)
                     socket.getOutputStream().bufferedWriter().use { writer ->
                         writer.write(json)
@@ -23,8 +25,10 @@ class ChatPeer {
                         writer.flush()
                     }
                 }
+                true
             } catch (e: Exception) {
-                println("Грешка: ${e.message}")
+                println("Send message error: ${e.message}")
+                false
             }
         }
 

@@ -2,6 +2,7 @@
   <configuration default="false" name="Start_Stefan" type="JetRunConfigurationType" singleton="false">
     <envs>
       <env name="user.name" value="stefan" />
+      <env name="user.id" value="stefan-san" />
     </envs>
     <option name="MAIN_CLASS_NAME" value="com.app.ui.MainChatWindowKt" />
     <module name="app.chat-ui.main" />

@@ -8,9 +8,11 @@ import javafx.application.Platform
 import javafx.scene.Scene
 import javafx.stage.Stage
 import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import org.stefan.chat.ChatPeer
 import org.stefan.chat.PeerDiscovery
+import kotlin.system.exitProcess
 
 class MainChatWindow : Application() {
 
@@ -47,9 +49,10 @@ class MainChatWindow : Application() {
     }
 
     override fun stop() {
-        // TODO: close sockets
-        // chatPeer.stop(), discovery.stop() и т.н.
+        MainScope().cancel()
+
         super.stop()
+        exitProcess(0)
     }
 
 }

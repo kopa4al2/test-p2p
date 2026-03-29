@@ -1,6 +1,6 @@
 plugins {
     kotlin("jvm")
-    kotlin("plugin.serialization") version "2.0.0"
+    alias(libs.plugins.kotlin.serialization)
     `java-library`
 }
 
@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    api("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
+    api(libs.kotlinx.serialization.json)
     testImplementation(kotlin("test"))
 }
 

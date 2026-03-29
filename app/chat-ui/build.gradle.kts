@@ -1,7 +1,12 @@
 plugins {
-    id("application")
-    id("org.openjfx.javafxplugin") version "0.0.14"
     kotlin("jvm")
+    id("application")
+    alias(libs.plugins.javafx.gradle)
+    alias(libs.plugins.gluonfx.gradle)
+}
+
+application {
+    mainClass.set("com.app.ui.MainChatWindow")
 }
 
 javafx {
@@ -9,19 +14,17 @@ javafx {
     modules = listOf("javafx.controls", "javafx.fxml")
 }
 
-application {
-    mainClass.set("com.app.ui.MainChatWindow")
+gluonfx {
+    graalvmHome = System.getenv("GRAALVM_HOME")
 }
 
 dependencies {
-    implementation("org.controlsfx:controlsfx:11.1.2")
+    implementation(libs.controlsfx)
 
-    implementation("org.kordamp.ikonli:ikonli-materialdesign-pack:12.4.0")
-    implementation("org.kordamp.ikonli:ikonli-javafx:12.4.0")
+    implementation(libs.bundles.ikonli)
 
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-javafx:1.8.0")
+    implementation(libs.kotlinx.coroutines.javafx)
 
-    // Any additional shared dependencies
     implementation(project(":chat-network"))
     implementation(project(":chat-common"))
 }

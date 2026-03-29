@@ -1,22 +1,31 @@
-# Version catalog is a central place for you to declare and version dependencies
-# https://docs.gradle.org/current/userguide/platforms.html#sub:version-catalog
-# https://docs.gradle.org/current/userguide/platforms.html#sub::toml-dependencies-format
-
 [versions]
-kotlin = "2.1.0"
-kotlinxDatetime = "0.6.1"
-kotlinxSerializationJSON = "1.7.2"
-kotlinxCoroutines = "1.8.1"
+kotlin = "2.3.0"
+#kotlin = "2.1.0"
+kotlinx-datetime = "0.6.1"
+kotlinx-serialization-json = "1.7.2"
+kotlinx-coroutines = "1.8.1"
+javafx = "23"
+javafx-plugin = "0.0.14"
+gluonfx-plugin = "1.0.28"
+controlsfx = "11.1.2"
+ikonli = "12.4.0"
 
 [libraries]
-kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
-kotlinxDatetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDatetime" }
-kotlinxSerialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJSON" }
-kotlinxCoroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-javafx = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-javafx", version.ref = "kotlinx-coroutines" }
+controlsfx = { module = "org.controlsfx:controlsfx", version.ref = "controlsfx" }
+ikonli-materialdesign = { module = "org.kordamp.ikonli:ikonli-materialdesign-pack", version.ref = "ikonli" }
+ikonli-javafx = { module = "org.kordamp.ikonli:ikonli-javafx", version.ref = "ikonli" }
 
 # Libraries can be bundled together for easier import
 [bundles]
-kotlinxEcosystem = ["kotlinxDatetime", "kotlinxSerialization", "kotlinxCoroutines"]
+kotlinx-ecosystem = ["kotlinx-datetime", "kotlinx-serialization-json", "kotlinx-coroutines-core"]
+ikonli = ["ikonli-materialdesign", "ikonli-javafx"]
 
 [plugins]
-kotlinPluginSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+javafx-gradle = { id = "org.openjfx.javafxplugin", version.ref = "javafx-plugin" }
+gluonfx-gradle = { id = "com.gluonhq.gluonfx-gradle-plugin", version.ref = "gluonfx-plugin" }

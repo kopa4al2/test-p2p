@@ -16,7 +16,7 @@
           </compositeBuild>
         </compositeConfiguration>
         <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
-        <option name="gradleJvm" value="#GRADLE_JAVA_HOME" />
+        <option name="gradleJvm" value="graalvm-ce-23" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/app" />
@@ -26,6 +26,7 @@
             <option value="$PROJECT_DIR$/app/chat-ui" />
           </set>
         </option>
+        <option name="myGradleHome" value="C:\dev\gradle-8.5-bin\gradle-8.5" />
       </GradleProjectSettings>
     </option>
   </component>

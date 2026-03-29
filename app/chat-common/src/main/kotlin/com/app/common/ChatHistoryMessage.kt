@@ -6,5 +6,6 @@ data class ChatHistoryMessage(
     val senderName: String,
     val content: String,
     val timeSend: Long = System.currentTimeMillis(),
-    val timeSeen: Long = -1
+    val timeSeen: Long = -1,
+    val isPending: Boolean = false
 )

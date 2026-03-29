@@ -5,21 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57c73681-887f-41fe-b29e-c887443e5ab3" name="Changes" comment="6">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.run/Start_Martin.run.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.run/Start_Martin.run.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/buildSrc/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/buildSrc/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/chat-common/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-common/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/chat-common/src/main/kotlin/com/app/common/PeerInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-common/src/main/kotlin/com/app/common/PeerInfo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/chat-common/src/main/kotlin/com/app/common/config/ConfigManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-common/src/main/kotlin/com/app/common/config/ConfigManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/buildSrc/src/main/kotlin/kotlin-jvm.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/buildSrc/src/main/kotlin/kotlin-jvm.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/chat-common/src/main/kotlin/com/app/common/ChatHistoryMessage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-common/src/main/kotlin/com/app/common/ChatHistoryMessage.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/chat-common/src/main/kotlin/com/app/common/db/DatabaseManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-common/src/main/kotlin/com/app/common/db/DatabaseManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/chat-network/src/main/kotlin/org/stefan/chat/ChatPeer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-network/src/main/kotlin/org/stefan/chat/ChatPeer.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/chat-ui/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-ui/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/chat-ui/src/main/kotlin/com/app/ui/MainController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-ui/src/main/kotlin/com/app/ui/MainController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/chat-ui/src/main/kotlin/com/app/ui/MainView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-ui/src/main/kotlin/com/app/ui/MainView.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/chat-ui/src/main/kotlin/com/app/ui/components/ChatAreaView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-ui/src/main/kotlin/com/app/ui/components/ChatAreaView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/chat-ui/src/main/kotlin/com/app/ui/components/PeerListView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-ui/src/main/kotlin/com/app/ui/components/PeerListView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/chat-ui/src/main/resources/META-INF/native-image/reachability-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/chat-ui/src/main/resources/META-INF/native-image/reachability-metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/app/gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/gradle.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,24 +58,6 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="app" type="f1a62948:ProjectNode" />
               </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="app" type="f1a62948:ProjectNode" />
-                <item name="chat-ui" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="app" type="f1a62948:ProjectNode" />
-                <item name="chat-ui" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="app" type="f1a62948:ProjectNode" />
-                <item name="chat-ui" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="gluonfx" type="c8890929:TasksNode$1" />
-              </path>
             </expand>
             <select />
           </tree_state>
@@ -96,26 +76,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "kopa4al2"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;kopa4al2&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/kopa4al2/test-p2p.git",
-    "accountId": "c5d24de1-9e01-463d-bb7c-62c71856e1fb"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/kopa4al2/test-p2p&quot;,
+    &quot;accountId&quot;: &quot;bf587286-627c-4e08-bd06-9047a05fc7a4&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.gluonhq/gluonfx-gradle-plugin/1.0.28/bb1a85e09134ec7ec2bcf234036aa130e1b9aa9c/gluonfx-gradle-plugin-1.0.28.jar!/com/gluonhq/gradle/ClientExtension.class" root0="SKIP_INSPECTION" />
-    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.0.21/4789c95c3f2037f6689c0786baf1684275734ad3/kotlin-stdlib-2.0.21-sources.jar!/jvmMain/kotlin/Collections.kt" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.1.0/a6b63e055817a125d4d04fc586eb178a8060078d/kotlin-stdlib-2.1.0-sources.jar!/commonMain/kotlin/collections/Maps.kt" root0="SKIP_INSPECTION" />
     <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.1.0/a6b63e055817a125d4d04fc586eb178a8060078d/kotlin-stdlib-2.1.0-sources.jar!/commonMain/kotlin/time/Duration.kt" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.1.0/a6b63e055817a125d4d04fc586eb178a8060078d/kotlin-stdlib-2.1.0-sources.jar!/commonMain/kotlin/util/Standard.kt" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.1.0/a6b63e055817a125d4d04fc586eb178a8060078d/kotlin-stdlib-2.1.0-sources.jar!/jvmMain/kotlin/Collections.kt" root0="SKIP_INSPECTION" />
     <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.1.0/a6b63e055817a125d4d04fc586eb178a8060078d/kotlin-stdlib-2.1.0-sources.jar!/jvmMain/kotlin/system/Process.kt" root0="SKIP_INSPECTION" />
-    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm/1.10.1/acdf84accbb0635d4c0263b987ddf9a79cb6ea77/kotlinx-coroutines-core-jvm-1.10.1-sources.jar!/commonMain/Builders.common.kt" root0="SKIP_INSPECTION" />
-    <setting file="jar://$USER_HOME$/.gradle/jdks/eclipse_adoptium-22-amd64-windows.2/lib/src.zip!/java.base/java/net/DatagramSocket.java" root0="SKIP_INSPECTION" />
-    <setting file="jrt://$USER_HOME$/.gradle/jdks/eclipse_adoptium-22-amd64-windows.2!/java.base/java/lang/AutoCloseable.class" root0="SKIP_INSPECTION" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
@@ -129,58 +107,60 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Build app.executor": "Run",
-    "Gradle.Build p2p.executor": "Run",
-    "Gradle.Upgrade Gradle wrapper.executor": "Run",
-    "Gradle.app [:chat-ui:com.app.ui.MainChatWindowKt.main()].executor": "Run",
-    "Gradle.app [:chat-ui:nativeBuild].executor": "Run",
-    "Gradle.app [:chat-ui:nativeCompile].executor": "Run",
-    "Gradle.app [:chat-ui:nativeRunAgent].executor": "Run",
-    "Gradle.app [:chat-ui:run].executor": "Run",
-    "Gradle.app [build].executor": "Run",
-    "Gradle.app [nativeBuildAndroid].executor": "Run",
-    "Gradle.app [nativeBuildWindows].executor": "Run",
-    "Gradle.app [run].executor": "Run",
-    "Gradle.app [start].executor": "Debug",
-    "Gradle.app:chat-ui [run].executor": "Run",
-    "Gradle.p2p [run].executor": "Run",
-    "Gradle.p2p:chat-ui [clean].executor": "Run",
-    "Gradle.p2p:chat-ui [run].executor": "Run",
-    "JUnit.Whole project.executor": "Run",
-    "Kotlin.AppKt.executor": "Run",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "first",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Stefan/IdeaProjects/p2p/app/chat-common/src/main/kotlin/com/app/common/db",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/Stefan/IdeaProjects/p2p/chat-common/src/main/kotlin/Main.kt",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "configurable.group.junie",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build app.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build p2p.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Upgrade Gradle wrapper.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.app [:chat-ui:com.app.ui.MainChatWindowKt.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.app [:chat-ui:nativeBuild].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.app [:chat-ui:nativeCompile].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.app [:chat-ui:nativeRunAgent].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.app [:chat-ui:run].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.app [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.app [nativeBuildAndroid].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.app [nativeBuildWindows].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.app [run].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.app [start].executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.app:chat-ui [run].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.p2p [run].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.p2p:chat-ui [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.p2p:chat-ui [run].executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Whole project.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.AppKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.Start_Martin.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;first&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Stefan/IdeaProjects/p2p/app/chat-common/src/main/kotlin/com/app/common/db&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Stefan/IdeaProjects/p2p/chat-common/src/main/kotlin/Main.kt&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Stefan\IdeaProjects\p2p\app\chat-common\src\main\kotlin\com\app\common\db" />
@@ -190,7 +170,7 @@
       <recent name="C:\Users\Stefan\IdeaProjects\p2p\chat-ui\src\main\kotlin\org\stefan\chatui" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.Start_Stefan">
+  <component name="RunManager" selected="Kotlin.Start_Martin">
     <configuration name="app [:chat-ui:run]" type="GradleRunConfiguration" factoryName="Gradle" singleton="false" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -301,24 +281,23 @@
       <item itemvalue="Gradle.app [build]" />
       <item itemvalue="Gradle.app [:chat-ui:run]" />
       <item itemvalue="Gradle.app [run]" />
-      <item itemvalue="Kotlin.Start_Stefan" />
       <item itemvalue="Kotlin.Start_Martin" />
+      <item itemvalue="Kotlin.Start_Stefan" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.app [:chat-ui:run]" />
-        <item itemvalue="Gradle.app [run]" />
-        <item itemvalue="Kotlin.Start_Stefan" />
         <item itemvalue="Gradle.app [start]" />
+        <item itemvalue="Gradle.app [run]" />
         <item itemvalue="Gradle.app [build]" />
+        <item itemvalue="Gradle.app [:chat-ui:run]" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.117" />
-        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.117" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
       </set>
     </attachedChunks>
   </component>
@@ -343,6 +322,8 @@
       <workItem from="1774770520699" duration="3399000" />
       <workItem from="1774774021806" duration="3375000" />
       <workItem from="1774778144506" duration="26260000" />
+      <workItem from="1774815177434" duration="1627000" />
+      <workItem from="1774816853960" duration="2866000" />
     </task>
     <task id="LOCAL-00001" summary="3">
       <option name="closed" value="true" />
@@ -395,7 +376,8 @@
     <MESSAGE value="4" />
     <MESSAGE value="5" />
     <MESSAGE value="6" />
-    <option name="LAST_COMMIT_MESSAGE" value="6" />
+    <MESSAGE value="2" />
+    <option name="LAST_COMMIT_MESSAGE" value="2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -409,11 +391,6 @@
           <url>file://$PROJECT_DIR$/chat-common/src/main/kotlin/ChatMessage.kt</url>
           <line>13</line>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/chat-ui/src/main/kotlin/com/app/ui/MainChatWindow.kt</url>
-          <line>29</line>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

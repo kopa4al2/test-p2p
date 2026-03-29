@@ -8,7 +8,7 @@ import org.controlsfx.control.StatusBar
 
 class MainView(private val controller: MainController) : BorderPane() {
     private val peerListComp = PeerListView(controller.peers)
-    private val chatAreaComp = ChatAreaView { text -> controller.sendMessage(text) }
+    private val chatAreaComp = ChatAreaView(controller.getMyId()) { text -> controller.sendMessage(text) }
     private val statusBar = StatusBar().apply {
         text = "Ready"
         style = "-fx-background-color: #EEEEEE;"

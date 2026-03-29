@@ -6,11 +6,11 @@ plugins {
 }
 
 application {
-    mainClass.set("com.app.ui.MainChatWindowKt")
+    mainClass.set("com.app.ui.Launcher")
 }
 
 javafx {
-    version = "22"
+    version = "23"
     modules = listOf(
         "javafx.controls"
 //        "javafx.fxml"
@@ -48,5 +48,5 @@ repositories {
     mavenCentral()
 }
 kotlin {
-    jvmToolchain(22)
+    jvmToolchain(23)
 }

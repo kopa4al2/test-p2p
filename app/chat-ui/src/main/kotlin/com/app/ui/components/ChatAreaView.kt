@@ -15,7 +15,7 @@ import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 
-class ChatAreaView(val onSend: (String) -> Unit) : VBox() {
+class ChatAreaView(val myId: String, val onSend: (String) -> Unit) : VBox() {
     private val messages = FXCollections.observableArrayList<ChatHistoryMessage>()
     private val listView = ListView(messages)
     private val input = TextField()
@@ -81,8 +81,8 @@ class ChatAreaView(val onSend: (String) -> Unit) : VBox() {
                         bubble.text = item.content
                         timeLabel.text = timeFormatter.format(Instant.ofEpochMilli(item.timeSend))
                         
-                        val isMine = item.senderName == "Me"
-                        val isSystem = item.senderName == "System"
+                        val isMine = item.senderId == myId
+                        val isSystem = item.senderId == "system"
                         
                         if (isSystem) {
                             root.alignment = Pos.CENTER
@@ -92,7 +92,9 @@ class ChatAreaView(val onSend: (String) -> Unit) : VBox() {
                         } else if (isMine) {
                             root.alignment = Pos.CENTER_RIGHT
                             container.alignment = Pos.TOP_RIGHT
-                            bubble.style = "-fx-background-color: #DCF8C6; -fx-background-radius: 10; -fx-text-fill: black;"
+                            val bgColor = if (item.isPending) "#E2E2E2" else "#DCF8C6"
+                            val textStyle = if (item.isPending) "-fx-font-style: italic; -fx-text-fill: #666666;" else "-fx-text-fill: black;"
+                            bubble.style = "-fx-background-color: $bgColor; -fx-background-radius: 10; $textStyle"
                         } else {
                             root.alignment = Pos.CENTER_LEFT
                             container.alignment = Pos.TOP_LEFT
@@ -111,7 +113,12 @@ class ChatAreaView(val onSend: (String) -> Unit) : VBox() {
     }
     
     fun appendMessage(msg: ChatHistoryMessage) {
-        messages.add(msg)
+        val index = messages.indexOfFirst { it.messageId == msg.messageId }
+        if (index != -1) {
+            messages[index] = msg
+        } else {
+            messages.add(msg)
+        }
         listView.scrollTo(messages.size - 1)
     }
 
